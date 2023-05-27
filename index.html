@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>HexGame</title>
+</head>
+<body>
+    <div id="wall">
+        <div id="frame">
+            <div id="colorShow"></div>
+            <p id="question">Qual você acha que é o código <span class="bold">Hexadecimal</span> dessa cor?</p>
+            <div id="answerFrame">
+                <a>#</a>
+                <input id="answerInput" oninput="checkAnswer(this)" maxlength="6" placeholder="FFFFFF">
+            </div>
+            <button id="sender" onclick="answer()">Enviar</button>
+        </div>
+        <div id="frameResult">
+            <h1>Resultado:</h1>
+            <p>Código original: <span id="originalCode" class="bold hiddenCode" onclick="revel()">revelar</span></p>
+            <h2>Pontos:</h2>
+            <p><span class="red">(R)</span> Vermelho: <span class="bold" id="aRed">0</span>/100</p>
+            <p><span class="green">(G)</span> Verde: <span class="bold" id="aGreen">0</span>/100</p>
+            <p><span class="blue">(B)</span> Azul: <span class="bold" id="aBlue">0</span>/100</p>
+            <br>
+            <p id="total">Total: <span class="bold" id="aTotal">0</span>/100</p>
+            <br>
+            <br>
+
+            <h1 id="precision">Precisão: <span class="bold" id="aPercentage">0</span>%</h1>
+        </div>
+    </div>
+    <button id="tryAgain" onclick="tryAgain()">Tentar de Novo</button>
+</body>
+<script src="index.js"></script>
+</html>
